@@ -52,7 +52,8 @@ public class ApollofyRestController {
         return trackController.getTracks();
     }
 
-    @GetMapping("/tracks")
+    //Marc Puig Alcaide: talked to Alfredo to commit this change after time limit
+    @GetMapping("/tracksCore")
     public List<TrackDTO> getAllTracks() {
         return trackController.getAllTracks();
     }
