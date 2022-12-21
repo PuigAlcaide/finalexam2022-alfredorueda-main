@@ -1,5 +1,9 @@
 package cat.tecnocampus.apollofy.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 /*
@@ -9,15 +13,25 @@ TODO 4.1 This class represents the association between the DJList and tracks. It
     You need to add all the necessary JPA annotations
  */
 
+@Entity
 public class DJListTrackFragment {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private Long startTimeMillis;
 
     private Long endTimeMillis;
 
+    @ManyToOne(optional = false)
+    @NotNull
+    @JsonIgnoreProperties("djListTrackFragments")
     private Track track;
 
+    @ManyToOne(optional = false)
+    @NotNull
+    @JsonIgnoreProperties("djListTrackFragments")
     private DJList djList;
 
     public DJListTrackFragment() {

@@ -3,6 +3,8 @@ package cat.tecnocampus.apollofy.domain;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.List;
@@ -17,10 +19,12 @@ public class Track {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
+    @NotNull(message = "Track title cannot be null")
+    @NotBlank(message = "Track title cannot be blank")
     private String title;
 
     @Column(name = "duration_seconds")
+    @Min(value = 0, message = "Track duration cannot be negative")
     private Long durationSeconds;
 
     @ManyToMany(cascade = {

@@ -33,6 +33,8 @@ public class ApplicationSecurityConfig {
                 //TODO 2 Here you can authorize users. You may want to use hasAnyRole()
                 .antMatchers("**").permitAll()
 
+                .antMatchers(HttpMethod.POST, "api/djlist/{id}/tracks").hasAnyRole()
+
                 .and()
                 .addFilter(new JwtAuthenticationFilter(authenticationProvider(), jwtConfig))
                 .addFilterAfter(new JwtTokenVerifierFilter(jwtConfig), JwtAuthenticationFilter.class)
