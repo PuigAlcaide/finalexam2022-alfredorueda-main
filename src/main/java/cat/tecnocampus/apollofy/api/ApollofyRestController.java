@@ -6,6 +6,7 @@ import cat.tecnocampus.apollofy.application.TrackController;
 import cat.tecnocampus.apollofy.application.UserPlayListController;
 import cat.tecnocampus.apollofy.application.dto.PopularGenre;
 import cat.tecnocampus.apollofy.application.dto.PopularTrack;
+import cat.tecnocampus.apollofy.application.dto.TrackDTO;
 import cat.tecnocampus.apollofy.domain.Genre;
 import cat.tecnocampus.apollofy.domain.Playlist;
 import cat.tecnocampus.apollofy.domain.Track;
@@ -49,6 +50,11 @@ public class ApollofyRestController {
     @GetMapping("/tracks")
     public List<Track> getTracks() {
         return trackController.getTracks();
+    }
+
+    @GetMapping("/tracks")
+    public List<TrackDTO> getAllTracks() {
+        return trackController.getAllTracks();
     }
 
     @GetMapping("/tracks/{id}")
@@ -101,22 +107,22 @@ public class ApollofyRestController {
         return userPlayListController.getMe(principal.getName()).getAuthoredTracks();
     }
 
-    @GetMapping("/me/playLists")
+    @GetMapping("/me/playlists")
     public List<Playlist> getUserPlayLists(Principal principal) {
         return userPlayListController.getUserPlayLists(principal.getName());
     }
 
-    @GetMapping("/playLists")
+    @GetMapping("/playlists")
     public List<Playlist> getPlayLists() {
         return userPlayListController.getPlayLists();
     }
 
-    @GetMapping("/playLists/{id}")
+    @GetMapping("/playlists/{id}")
     public Playlist getPlayList(@PathVariable Long id) {
         return userPlayListController.getPlayListById(id);
     }
 
-    @PostMapping("/me/playLists")
+    @PostMapping("/me/playlists")
     public void postPlayLists(@RequestBody Playlist playList, Principal principal) {
         userPlayListController.createPlayList(playList, principal.getName());
     }
@@ -126,7 +132,7 @@ public class ApollofyRestController {
         return likesController.getUserLikedTracks(principal.getName());
     }
 
-    @PutMapping("/playLists/{id}/tracks")
+    @PutMapping("/playlists/{id}/tracks")
     public void addTracksToPlayList(@PathVariable Long id, @RequestBody List<Long> trackIds) {
         userPlayListController.addTracksToPlayList(id, trackIds);
     }

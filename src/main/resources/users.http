@@ -63,12 +63,12 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtcGVyZXpAdGVjbm9jYW1wdXMuY
 #Authorization: {{auth_token}}
 
 ###
-GET http://localhost:8080/api/me/playLists
+GET http://localhost:8080/api/me/playlists
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtcGVyZXpAdGVjbm9jYW1wdXMuY2F0IiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfRlJFRSJ9XSwiaWF0IjoxNjcxMDE5MDU2LCJleHAiOjE2NzE4MzY0MDB9.HQ9oFH0msAOaeqWHxVpKPnklos9W0SMCQ2VZtQsack2bP5fZirxokg-1f8kiloksrVoN0mdOf-WNOzxIxzgwow
 #Authorization: {{auth_token}}
 
 ###
-POST http://localhost:8080/api/me/playLists
+POST http://localhost:8080/api/me/playlists
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtcGVyZXpAdGVjbm9jYW1wdXMuY2F0IiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfRlJFRSJ9XSwiaWF0IjoxNjcxMDE5MDU2LCJleHAiOjE2NzE4MzY0MDB9.HQ9oFH0msAOaeqWHxVpKPnklos9W0SMCQ2VZtQsack2bP5fZirxokg-1f8kiloksrVoN0mdOf-WNOzxIxzgwow
 #Authorization: {{auth_token}}
 Content-Type: application/json
@@ -89,7 +89,7 @@ Content-Type: application/json
 
 ###
 ###
-PUT http://localhost:8080/api/playLists/1/tracks
+PUT http://localhost:8080/api/playlists/1/tracks
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtcGVyZXpAdGVjbm9jYW1wdXMuY2F0IiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfRlJFRSJ9XSwiaWF0IjoxNjcxMDE5MDU2LCJleHAiOjE2NzE4MzY0MDB9.HQ9oFH0msAOaeqWHxVpKPnklos9W0SMCQ2VZtQsack2bP5fZirxokg-1f8kiloksrVoN0mdOf-WNOzxIxzgwow
 #Authorization: {{auth_token}}
 Content-Type: application/json
@@ -103,7 +103,7 @@ Content-Type: application/json
 %}
 
 ###
-GET http://localhost:8080/api/me/playLists
+GET http://localhost:8080/api/me/playlists
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtcGVyZXpAdGVjbm9jYW1wdXMuY2F0IiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfRlJFRSJ9XSwiaWF0IjoxNjcxMDE5MDU2LCJleHAiOjE2NzE4MzY0MDB9.HQ9oFH0msAOaeqWHxVpKPnklos9W0SMCQ2VZtQsack2bP5fZirxokg-1f8kiloksrVoN0mdOf-WNOzxIxzgwow
 #Authorization: {{auth_token}}
 

@@ -1,6 +1,7 @@
 package cat.tecnocampus.apollofy.application;
 
 import cat.tecnocampus.apollofy.application.dto.PopularTrack;
+import cat.tecnocampus.apollofy.application.dto.TrackDTO;
 import cat.tecnocampus.apollofy.application.exceptions.ElementNotFoundInBBDD;
 import cat.tecnocampus.apollofy.domain.Genre;
 import cat.tecnocampus.apollofy.domain.Track;
@@ -107,4 +108,7 @@ public class TrackController {
 
     }
 
+    public List<TrackDTO> getAllTracks() {
+        return trackRepository.findAllBy();
+    }
 }

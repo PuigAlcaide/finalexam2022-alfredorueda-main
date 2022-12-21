@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -19,12 +20,11 @@ public class Track {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull(message = "Track title cannot be null")
-    @NotBlank(message = "Track title cannot be blank")
+    @Pattern(regexp = "^[A-Z](\\w)+$", message = "Track title must begin witb capital letter")
     private String title;
 
     @Column(name = "duration_seconds")
-    @Min(value = 0, message = "Track duration cannot be negative")
+    @Min(value = 5, message = "must be greater than or equal to 5")
     private Long durationSeconds;
 
     @ManyToMany(cascade = {

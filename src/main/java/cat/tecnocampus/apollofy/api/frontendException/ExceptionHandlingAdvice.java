@@ -12,9 +12,16 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class ExceptionHandlingAdvice {
 
     @ResponseBody
-    @ExceptionHandler({ElementNotFoundInBBDD.class, NotAuthorizedToDoAction.class})
+    @ExceptionHandler({ElementNotFoundInBBDD.class})
     @ResponseStatus(HttpStatus.NOT_FOUND)
     String objectNotFoundHandler(Exception ex) {
+        return ex.getMessage();
+    }
+
+    @ResponseBody
+    @ExceptionHandler({NotAuthorizedToDoAction.class})
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    String notAuthorizedHandler(Exception ex) {
         return ex.getMessage();
     }
 }

@@ -32,9 +32,29 @@ public class ApplicationSecurityConfig {
                 .authorizeRequests()
                 //TODO 2 Here you can authorize users. You may want to use hasAnyRole()
                 .antMatchers("**").permitAll()
+                /*
+                //.antMatchers(HttpMethod.GET, "/api/tracks").permitAll()
+                .antMatchers("/me").authenticated()
 
-                .antMatchers(HttpMethod.POST, "api/djlist/{id}/tracks").hasAnyRole()
+                .antMatchers(HttpMethod.GET, "/api/me").hasRole("FREE")
+                .antMatchers(HttpMethod.GET, "/api/me/tracks").hasRole("FREE")
+                .antMatchers(HttpMethod.GET, "/api/me/tracks/{trackId}").hasRole("FREE")
 
+
+                .antMatchers(HttpMethod.POST, "/api/tracks").hasRole("PREMIUM")
+                .antMatchers(HttpMethod.PUT, "/api/tracks/{trackId}/artists").hasRole("PREMIUM")
+                .antMatchers(HttpMethod.PUT, "/api/tracks/{trackId}/genres").hasRole("PREMIUM")
+                .antMatchers(HttpMethod.PUT, "/api/me/likedTracks/{trackId}").hasRole("PREMIUM")
+                .antMatchers(HttpMethod.GET, "/api/me/likedTracks").hasRole("PREMIUM")
+
+                .antMatchers( "/api/me/playlists").hasRole("PROFESSIONAL")
+                .antMatchers(HttpMethod.PUT, "/api/users").hasRole("PROFESSIONAL")
+                .antMatchers(HttpMethod.GET, "/api/top/genres").hasRole("PROFESSIONAL")
+                .antMatchers(HttpMethod.GET, "/api/top/tracks").hasRole("PROFESSIONAL")
+
+                .antMatchers(HttpMethod.POST, "/api/djlist/{id}/tracks").hasAnyRole()
+
+                 */
                 .and()
                 .addFilter(new JwtAuthenticationFilter(authenticationProvider(), jwtConfig))
                 .addFilterAfter(new JwtTokenVerifierFilter(jwtConfig), JwtAuthenticationFilter.class)
